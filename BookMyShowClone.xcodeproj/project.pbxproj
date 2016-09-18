@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C7158951D8D7DE300E9BD75 /* BookMyShowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7158941D8D7DE300E9BD75 /* BookMyShowManager.swift */; };
 		2CF380FC1D8A87C300650888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF380FB1D8A87C300650888 /* AppDelegate.swift */; };
 		2CF380FE1D8A87C300650888 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF380FD1D8A87C300650888 /* ViewController.swift */; };
 		2CF381011D8A87C300650888 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF380FF1D8A87C300650888 /* Main.storyboard */; };
 		2CF381031D8A87C300650888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CF381021D8A87C300650888 /* Assets.xcassets */; };
 		2CF381061D8A87C300650888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF381041D8A87C300650888 /* LaunchScreen.storyboard */; };
+		2CF3810E1D8A920C00650888 /* MoviePosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3810D1D8A920C00650888 /* MoviePosterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C7158941D8D7DE300E9BD75 /* BookMyShowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMyShowManager.swift; sourceTree = "<group>"; };
 		2CF380F81D8A87C300650888 /* BookMyShowClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookMyShowClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF380FB1D8A87C300650888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CF380FD1D8A87C300650888 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		2CF381021D8A87C300650888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CF381051D8A87C300650888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CF381071D8A87C300650888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CF3810D1D8A920C00650888 /* MoviePosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePosterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				2CF380FB1D8A87C300650888 /* AppDelegate.swift */,
 				2CF380FD1D8A87C300650888 /* ViewController.swift */,
+				2CF3810D1D8A920C00650888 /* MoviePosterCell.swift */,
+				2C7158941D8D7DE300E9BD75 /* BookMyShowManager.swift */,
 				2CF380FF1D8A87C300650888 /* Main.storyboard */,
 				2CF381021D8A87C300650888 /* Assets.xcassets */,
 				2CF381041D8A87C300650888 /* LaunchScreen.storyboard */,
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF3810E1D8A920C00650888 /* MoviePosterCell.swift in Sources */,
 				2CF380FE1D8A87C300650888 /* ViewController.swift in Sources */,
 				2CF380FC1D8A87C300650888 /* AppDelegate.swift in Sources */,
+				2C7158951D8D7DE300E9BD75 /* BookMyShowManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +310,7 @@
 				2CF3810C1D8A87C300650888 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
