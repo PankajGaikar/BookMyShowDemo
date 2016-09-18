@@ -83,6 +83,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventDetailsViewController") as! EventDetailsViewController
+        vc.eventDetails = self.eventList.object(at: indexPath.row) as! NSDictionary
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

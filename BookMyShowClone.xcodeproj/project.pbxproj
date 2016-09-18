@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C70F65E1D8E795100054AF9 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70F65D1D8E795100054AF9 /* EventDetailsViewController.swift */; };
 		2C7158951D8D7DE300E9BD75 /* BookMyShowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7158941D8D7DE300E9BD75 /* BookMyShowManager.swift */; };
 		2CF380FC1D8A87C300650888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF380FB1D8A87C300650888 /* AppDelegate.swift */; };
 		2CF380FE1D8A87C300650888 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF380FD1D8A87C300650888 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C70F65D1D8E795100054AF9 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		2C7158941D8D7DE300E9BD75 /* BookMyShowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMyShowManager.swift; sourceTree = "<group>"; };
 		2CF380F81D8A87C300650888 /* BookMyShowClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookMyShowClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF380FB1D8A87C300650888 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				2CF380FB1D8A87C300650888 /* AppDelegate.swift */,
 				2CF380FD1D8A87C300650888 /* ViewController.swift */,
 				2CF3810D1D8A920C00650888 /* MoviePosterCell.swift */,
+				2C70F65D1D8E795100054AF9 /* EventDetailsViewController.swift */,
 				2C7158941D8D7DE300E9BD75 /* BookMyShowManager.swift */,
 				2CF380FF1D8A87C300650888 /* Main.storyboard */,
 				2CF381021D8A87C300650888 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CF3810E1D8A920C00650888 /* MoviePosterCell.swift in Sources */,
+				2C70F65E1D8E795100054AF9 /* EventDetailsViewController.swift in Sources */,
 				2CF380FE1D8A87C300650888 /* ViewController.swift in Sources */,
 				2CF380FC1D8A87C300650888 /* AppDelegate.swift in Sources */,
 				2C7158951D8D7DE300E9BD75 /* BookMyShowManager.swift in Sources */,

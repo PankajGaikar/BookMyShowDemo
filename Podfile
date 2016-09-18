@@ -4,7 +4,7 @@
 target 'BookMyShowClone' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-pod 'AFNetworking'
+	pod "YouTube-Player-iOS-Helper", "~> 0.1"	
   # Pods for BookMyShowClone
 
 end
