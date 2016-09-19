@@ -1,0 +1,6 @@
+framework module Pods_BookMyShowClone {
+  umbrella header "Pods-BookMyShowClone-umbrella.h"
+
+  export *
+  module * { export * }
+}
