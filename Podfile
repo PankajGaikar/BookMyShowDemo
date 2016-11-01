@@ -6,5 +6,4 @@ target 'BookMyShowClone' do
   use_frameworks!
 	pod "youtube-ios-player-helper", "~> 0.1.4"	
   # Pods for BookMyShowClone
-
 end

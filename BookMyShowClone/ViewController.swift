@@ -41,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        NSLog("Memory warning received");
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,37 +55,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "MovieListCell"
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MoviePosterCell
         
-        // Fetches the appropriate meal for the data source layout.
-        let eventDictionary:NSDictionary = self.eventList.object(at: indexPath.row) as! NSDictionary
+        // Fetches the appropriate event for the data source layout.
+        let eventDictionary:Events = self.eventList.object(at: indexPath.row) as! Events
 
         //Custom Attributes
-        
         let movieNameAttribute = [NSFontAttributeName: UIFont.systemFont(ofSize: 18)]
         let languageAttribute = [NSFontAttributeName: UIFont.systemFont(ofSize: 12) ]
-        
         let movieHeaderName = NSMutableAttributedString()
         
-        movieHeaderName.append( NSAttributedString(string: (eventDictionary.value(forKey: "EventTitle") as! String?)!, attributes: movieNameAttribute) )
+        movieHeaderName.append( NSAttributedString(string: eventDictionary.eventName, attributes: movieNameAttribute) )
         movieHeaderName.append( NSAttributedString(string: ", ", attributes: languageAttribute) )
-        movieHeaderName.append( NSAttributedString(string: (eventDictionary.value(forKey: "Language") as! String?)!, attributes: languageAttribute) )
+        movieHeaderName.append( NSAttributedString(string: eventDictionary.langauges, attributes: languageAttribute) )
         
         cell.movieName.attributedText = movieHeaderName
-        cell.movieGenre.text = eventDictionary.value(forKey: "Genre") as! String?
-        
-        cell.posterImage.downloadImageFrom(link: eventDictionary.value(forKey: "BannerURL") as! String, contentMode: UIViewContentMode.scaleAspectFill )
-        
+        cell.movieGenre.text = eventDictionary.genres
+        cell.posterImage.downloadImageFrom(link: eventDictionary.playbackUri, contentMode: UIViewContentMode.scaleAspectFill )
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventDetailsViewController") as! EventDetailsViewController
-        vc.eventDetails = self.eventList.object(at: indexPath.row) as! NSDictionary
+        vc.eventDetails = self.eventList.object(at: indexPath.row) as! Events //as! NSDictionary
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -12,7 +12,9 @@ import youtube_ios_player_helper
 
 class EventDetailsViewController : UIViewController
 {
-    var eventDetails:NSDictionary = [:]
+//    var eventDetails:NSDictionary = [:]
+    
+    var eventDetails = Events.init();
     
     @IBOutlet weak var youtubePlayer: YTPlayerView!
     @IBOutlet weak var genreTextView: UITextView!
@@ -24,29 +26,27 @@ class EventDetailsViewController : UIViewController
     @IBOutlet weak var synopsysTextView: UITextView!
     
     override func viewDidLoad() {
-        let playbackURI = self.eventDetails.object(forKey: "TrailerURL") as! String
-        
+        //@TODO - Change it to model class
+        self.title = self.eventDetails.eventName;//object(forKey: "EventTitle") as? String
+        let playbackURI = self.eventDetails.playbackUri;//object(forKey: "TrailerURL") as! String
         let regexString = self.extractYoutubeIdFromLink(link: playbackURI)
-        
         self.youtubePlayer.load(withVideoId: regexString!)
         
-        self.releaseData.text = self.eventDetails.object(forKey: "EventReleaseDate") as? String
-        self.runTime.text = self.eventDetails.object(forKey: "Length") as? String
-        self.director.text = self.eventDetails.object(forKey: "Director") as? String
+        self.releaseData.text = self.eventDetails.releaseDate;//object(forKey: "EventReleaseDate") as? String
+        self.runTime.text = self.eventDetails.length//object(forKey: "Length") as? String
+        self.director.text = self.eventDetails.director //.object(forKey: "Director") as? String
         
-        
-        let actors = self.eventDetails.object(forKey: "Actors") as? String
-        let actorsList = actors?.replacingOccurrences(of: ", ", with: "\n")
-        
-        let genres = self.eventDetails.object(forKey: "Genre") as? String
-        let genresList = genres?.replacingOccurrences(of: ", ", with: "\n")
-        
-        
-        self.languageTextView.text = self.eventDetails.object(forKey: "Language") as? String
+        //Remove comas and add new line for good look on detail screen
+        let actors = self.eventDetails.actors//object(forKey: "Actors") as? String
+        let actorsList = actors.replacingOccurrences(of: ", ", with: "\n")
         self.castTextView.text = actorsList
-        self.synopsysTextView.text = self.eventDetails.object(forKey: "EventSynopsis") as? String
+        
+        let genres = self.eventDetails.genres//object(forKey: "Genre") as? String
+        let genresList = genres.replacingOccurrences(of: ", ", with: "\n")
         self.genreTextView.text = genresList
         
+        self.languageTextView.text = self.eventDetails.langauges//object(forKey: "Language") as? String
+        self.synopsysTextView.text = self.eventDetails.synopsys//object(forKey: "EventSynopsis") as? String
     }
     
     func extractYoutubeIdFromLink(link: String) -> String? {
@@ -61,7 +61,6 @@ class EventDetailsViewController : UIViewController
         let matches = regExp.matches(in: link as String, options:options, range:range)
         if let firstMatch = matches.first {
             print(firstMatch)
-            
             return nsLink.substring(with: firstMatch.range)
         }
         return nil
