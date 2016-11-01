@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1C1BD81DACD0610068AAA8 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1C1BD71DACD0610068AAA8 /* Events.swift */; };
 		2C70F65E1D8E795100054AF9 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70F65D1D8E795100054AF9 /* EventDetailsViewController.swift */; };
 		2C7158951D8D7DE300E9BD75 /* BookMyShowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7158941D8D7DE300E9BD75 /* BookMyShowManager.swift */; };
 		2CF380FC1D8A87C300650888 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF380FB1D8A87C300650888 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C1C1BD71DACD0610068AAA8 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		2C70F65D1D8E795100054AF9 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		2C7158941D8D7DE300E9BD75 /* BookMyShowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMyShowManager.swift; sourceTree = "<group>"; };
 		2CB959011D90511500041A4C /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = "../../Library/Developer/Xcode/DerivedData/BookMyShowClone-ddlxcxyumjkibjefzynrzoevlaqs/Build/Products/Debug-iphonesimulator/YouTubePlayer/YouTubePlayer.framework"; sourceTree = "<group>"; };
@@ -47,6 +49,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C1C1BD61DACD0360068AAA8 /* ModelClass */ = {
+			isa = PBXGroup;
+			children = (
+				2C1C1BD71DACD0610068AAA8 /* Events.swift */,
+			);
+			name = ModelClass;
+			sourceTree = "<group>";
+		};
+		2C2B7EEA1DC8DBEC00E23377 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CF380FF1D8A87C300650888 /* Main.storyboard */,
+				2CF381041D8A87C300650888 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2C2B7EEB1DC8DC0D00E23377 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C2B7EEF1DC8DC7700E23377 /* Manager */,
+				2CF380FD1D8A87C300650888 /* ViewController.swift */,
+				2C70F65D1D8E795100054AF9 /* EventDetailsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2C2B7EEC1DC8DC2800E23377 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2CF381021D8A87C300650888 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		2C2B7EED1DC8DC3B00E23377 /* CustomCellClass */ = {
+			isa = PBXGroup;
+			children = (
+				2CF3810D1D8A920C00650888 /* MoviePosterCell.swift */,
+			);
+			name = CustomCellClass;
+			sourceTree = "<group>";
+		};
+		2C2B7EEE1DC8DC5100E23377 /* Basics */ = {
+			isa = PBXGroup;
+			children = (
+				2CF380FB1D8A87C300650888 /* AppDelegate.swift */,
+				2CF381071D8A87C300650888 /* Info.plist */,
+			);
+			name = Basics;
+			sourceTree = "<group>";
+		};
+		2C2B7EEF1DC8DC7700E23377 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2C7158941D8D7DE300E9BD75 /* BookMyShowManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
 		2CF380EF1D8A87C300650888 = {
 			isa = PBXGroup;
 			children = (
@@ -68,15 +130,12 @@
 		2CF380FA1D8A87C300650888 /* BookMyShowClone */ = {
 			isa = PBXGroup;
 			children = (
-				2CF380FB1D8A87C300650888 /* AppDelegate.swift */,
-				2CF380FD1D8A87C300650888 /* ViewController.swift */,
-				2CF3810D1D8A920C00650888 /* MoviePosterCell.swift */,
-				2C70F65D1D8E795100054AF9 /* EventDetailsViewController.swift */,
-				2C7158941D8D7DE300E9BD75 /* BookMyShowManager.swift */,
-				2CF380FF1D8A87C300650888 /* Main.storyboard */,
-				2CF381021D8A87C300650888 /* Assets.xcassets */,
-				2CF381041D8A87C300650888 /* LaunchScreen.storyboard */,
-				2CF381071D8A87C300650888 /* Info.plist */,
+				2C2B7EEE1DC8DC5100E23377 /* Basics */,
+				2C2B7EED1DC8DC3B00E23377 /* CustomCellClass */,
+				2C2B7EEC1DC8DC2800E23377 /* Assets */,
+				2C2B7EEB1DC8DC0D00E23377 /* Controller */,
+				2C2B7EEA1DC8DBEC00E23377 /* Views */,
+				2C1C1BD61DACD0360068AAA8 /* ModelClass */,
 			);
 			path = BookMyShowClone;
 			sourceTree = "<group>";
@@ -223,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1C1BD81DACD0610068AAA8 /* Events.swift in Sources */,
 				2CF3810E1D8A920C00650888 /* MoviePosterCell.swift in Sources */,
 				2C70F65E1D8E795100054AF9 /* EventDetailsViewController.swift in Sources */,
 				2CF380FE1D8A87C300650888 /* ViewController.swift in Sources */,
