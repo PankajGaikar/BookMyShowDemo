@@ -53,7 +53,6 @@ class BookMyShowManager : NSObject
     //MARK: Parse response
     func parseResponse(allEvents: NSDictionary) -> NSArray
     {
-        
         let parsedEventList: NSMutableArray = NSMutableArray.init(array: []);
         var eventList:NSArray = NSArray.init(array: []);
         eventList = allEvents.object(forKey: "arrEvent") as! NSArray
@@ -70,7 +69,8 @@ class BookMyShowManager : NSObject
             events.genres = event.object(forKey: "Genre") as! String
             events.langauges = event.object(forKey: "Language") as! String
             events.synopsys = event.object(forKey: "EventSynopsis") as! String
-            parsedEventList.add(event)
+            events.bannerUrl = event.object(forKey: "BannerURL") as! String
+            parsedEventList.add(events)
         }
         return parsedEventList as NSArray;
     }
