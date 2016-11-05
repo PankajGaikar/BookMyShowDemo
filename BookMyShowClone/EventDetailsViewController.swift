@@ -13,9 +13,7 @@ import youtube_ios_player_helper
 class EventDetailsViewController : UIViewController
 {
 //    var eventDetails:NSDictionary = [:]
-    
     var eventDetails = Events.init();
-    
     @IBOutlet weak var youtubePlayer: YTPlayerView!
     @IBOutlet weak var genreTextView: UITextView!
     @IBOutlet weak var releaseData: UILabel!
@@ -26,27 +24,26 @@ class EventDetailsViewController : UIViewController
     @IBOutlet weak var synopsysTextView: UITextView!
     
     override func viewDidLoad() {
-        //@TODO - Change it to model class
-        self.title = self.eventDetails.eventName;//object(forKey: "EventTitle") as? String
-        let playbackURI = self.eventDetails.playbackUri;//object(forKey: "TrailerURL") as! String
+        self.title = self.eventDetails.eventName;
+        let playbackURI = self.eventDetails.playbackUri;
         let regexString = self.extractYoutubeIdFromLink(link: playbackURI)
         self.youtubePlayer.load(withVideoId: regexString!)
         
-        self.releaseData.text = self.eventDetails.releaseDate;//object(forKey: "EventReleaseDate") as? String
-        self.runTime.text = self.eventDetails.length//object(forKey: "Length") as? String
-        self.director.text = self.eventDetails.director //.object(forKey: "Director") as? String
+        self.releaseData.text = self.eventDetails.releaseDate;
+        self.runTime.text = self.eventDetails.length
+        self.director.text = self.eventDetails.director
         
         //Remove comas and add new line for good look on detail screen
-        let actors = self.eventDetails.actors//object(forKey: "Actors") as? String
+        let actors = self.eventDetails.actors
         let actorsList = actors.replacingOccurrences(of: ", ", with: "\n")
         self.castTextView.text = actorsList
         
-        let genres = self.eventDetails.genres//object(forKey: "Genre") as? String
+        let genres = self.eventDetails.genres
         let genresList = genres.replacingOccurrences(of: ", ", with: "\n")
         self.genreTextView.text = genresList
         
-        self.languageTextView.text = self.eventDetails.langauges//object(forKey: "Language") as? String
-        self.synopsysTextView.text = self.eventDetails.synopsys//object(forKey: "EventSynopsis") as? String
+        self.languageTextView.text = self.eventDetails.langauges
+        self.synopsysTextView.text = self.eventDetails.synopsys
     }
     
     func extractYoutubeIdFromLink(link: String) -> String? {
@@ -65,5 +62,4 @@ class EventDetailsViewController : UIViewController
         }
         return nil
     }
-    
 }

@@ -23,14 +23,22 @@ extension UIImageView {
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var eventList:NSArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.isHidden = true
+        activityIndicator.startAnimating()
         BookMyShowManager.sharedInstance.getMovieList(completionHandler: { (movies) in
-            print(movies.count);
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.hidesWhenStopped = true
+                self.activityIndicator.isHidden = true
+                self.tableView.isHidden = false
+            }
             self.eventList = movies
             DispatchQueue.main.sync {
                 self.tableView.reloadData()
@@ -71,14 +79,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.movieName.attributedText = movieHeaderName
         cell.movieGenre.text = eventDictionary.genres
-        cell.posterImage.downloadImageFrom(link: eventDictionary.playbackUri, contentMode: UIViewContentMode.scaleAspectFill )
+        cell.posterImage.downloadImageFrom(link: eventDictionary.bannerUrl, contentMode: UIViewContentMode.scaleAspectFill )
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventDetailsViewController") as! EventDetailsViewController
-        vc.eventDetails = self.eventList.object(at: indexPath.row) as! Events //as! NSDictionary
+        vc.eventDetails = self.eventList.object(at: indexPath.row) as! Events
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

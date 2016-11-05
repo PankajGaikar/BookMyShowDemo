@@ -20,4 +20,5 @@ class Events
     var langauges: String = "";
     var synopsys: String = "";
     var length: String = "";
+    var bannerUrl: String = "";
 }
